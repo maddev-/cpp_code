@@ -1,0 +1,33 @@
+long DecToBin(long x) //Convert From Dec to Binary
+{
+	int mas[100],temp=x,i=-1;
+	long result=0;
+	for(int k=0;k<100;k++)
+		mas[k]=0;
+	while(temp>0)
+	{
+		i++;
+		mas[i]=temp%2;
+		temp/=2;
+	}
+	
+	for(int j=i; j>=0;j--){
+		if(mas[j]==1)
+			result+=pow((double)10,j);}
+
+	return result;
+}
+
+long BinToDec(long x) //Convert from Binary to Dec
+{
+	long temp=x,result=0;
+	int i=0;
+	while(temp>0)
+	{
+		if(temp%2==1)
+			result+=pow((double)2,i);
+		temp/=10;
+		i++;
+	}
+	return result;
+}
